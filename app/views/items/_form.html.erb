@@ -1,0 +1,9 @@
+<%= simple_form_for(@item) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, :as => :text, :input_html => {:rows => 5} %>
+  <%= f.input :donor_id, :collection => Person.all, :label_method => Proc.new {|t| "[#{t.id}]#{t.email}"}, :value_method => :id, :prompt => 'Select the Donor' %>
+  <%= f.input :minimum_bid %>
+  <%= f.input :winning_bidder_id, :collection => Person.all, :label_method => Proc.new {|t| "[#{t.id}]#{t.email}"}, :value_method => :id, :prompt => 'Select the Winner' %>
+  <%= f.input :winning_bid %>
+  <%= f.button :submit %>
+<% end %>
