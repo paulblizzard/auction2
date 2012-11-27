@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  http_basic_authenticate_with :name => "qpauctionadmin", :password => '4ucti0n', :except => [:new, :create]
+
   # GET /people
   # GET /people.json
   def index

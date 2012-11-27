@@ -1,8 +1,10 @@
+<%- last_winner = nil %>
+<%- total = 0 -%>
+
 <div class="pageHeader">
   <h1>Auction Receipts</h1>
 </div>
-<%- last_winner = nil %>
-<%- total = 0 -%>
+
 <table class="table table-stripped table-condensed">
   <thead>
     <tr>
@@ -11,10 +13,10 @@
       <th>Winning Bid</th>
     </tr>
   </thead>
+  <tbody>
   <%- @items.each do |item| -%>
     <%- current_winner = item.winning_bidder_id -%>
     <%- user = Person.find(current_winner) %>
-    
     <%- if last_winner && current_winner != last_winner -%>
     <tr>
       <td></td>
@@ -23,7 +25,7 @@
     </tr>
     <%- total = item.winning_bid %>
     <%- else -%>
-      <%= total += item.winning_bid %>
+      <%- total += item.winning_bid %>
     <%- end -%>
     <tr>
       <td><%- unless last_winner == current_winner -%><strong><%= link_to "#{user.first_name} #{user.last_name}".titlecase, user %></strong>&nbsp;&mdash;&nbsp;<small><%= user.email %></small><%- end -%></td>
@@ -37,4 +39,5 @@
     <td><strong>Total:</strong></td>
     <td><strong><%= number_to_currency total %></strong></td>
   </tr>
+  </tbody>
 </table>

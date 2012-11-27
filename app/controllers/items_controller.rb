@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  
+  http_basic_authenticate_with :name => "qpauctionadmin", :password => '4ucti0n'
+  
+  
   # GET /items
   # GET /items.json
   def index
