@@ -1,6 +1,6 @@
 Auction2::Application.routes.draw do
   get "welcome/index"
-
+  get "items/receipt"
   resources :items
 
   resources :people
