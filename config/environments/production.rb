@@ -30,6 +30,20 @@ Auction2::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "qpauctions.ca",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "queensparkauction@gmail.com",
+    password: "qp4ucti0n"
+  }
+  
+  # Specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = {host: "qpauction.ca"}
+
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
