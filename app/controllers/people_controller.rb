@@ -45,7 +45,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.save
         UserMailer.signup_confirmation(@person).deliver
-        format.html { render action: "new", notice: "Registration Successful. An email was sent to #{@person.email} with your bidder number." }
+        format.html { redirect_to root_path, notice: "Registration Successful. An email was sent to #{@person.email} with your bidder number." }
         format.json { render json: @person, status: :created, location: @person }
       else
         format.html { render action: "new" }
