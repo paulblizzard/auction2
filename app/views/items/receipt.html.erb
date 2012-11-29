@@ -1,8 +1,8 @@
 <%- last_winner = nil %>
 <%- total = 0 -%>
-
+<%- grand_total = 0 -%>
 <div class="pageHeader">
-  <h1>Auction Receipts</h1>
+  <h1>Auction Receipts <small><%= number_to_currency Item.all.collect { |item| item.winning_bid rescue 0 }.reduce(:+) %></small></h1>
 </div>
 
 <table class="table table-stripped table-condensed">
@@ -16,7 +16,7 @@
   <tbody>
   <%- @items.each do |item| -%>
     <%- current_winner = item.winning_bidder_id -%>
-    <%- user = Person.find(current_winner) %>
+    <%- user = Person.find(current_winner) rescue nil %>
     <%- if last_winner && current_winner != last_winner -%>
     <tr>
       <td></td>
