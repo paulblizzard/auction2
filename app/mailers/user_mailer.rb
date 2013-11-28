@@ -9,12 +9,18 @@ class UserMailer < ActionMailer::Base
   #
   def signup_confirmation(person)
     @person = person
-    mail (to: @person.email, subject: "Confirmation - Queens Park Auction", reply_to: "pressgalleryauction@gmail.com")
+    mail (:to       =>    @person.email, 
+          :subject  =>    "Confirmation - Queens Park Auction", 
+          :reply_to =>    "pressgalleryauction@gmail.com")
   end
 
   def returning_user_confirmation(person)
     @person = person
-    mail to: @person.email, subject: "Queens Park Auction - Welcome Back!", reply_to: "pressgalleryauction@gmail.com")
-  end
+    
+    mail (:to       =>    @person.email, 
+          :subject  =>    "Queens Park Auction - Welcome Back!", 
+          :reply_to =>    "pressgalleryauction@gmail.com")
+    
+    end
   end
 end
