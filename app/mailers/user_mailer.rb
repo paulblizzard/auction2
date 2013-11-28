@@ -14,6 +14,6 @@ class UserMailer < ActionMailer::Base
 
   def returning_user_confirmation(person)
     @person = person
-    mail to: @person.email, subjet: "Queens Park Auction - Welcome Back!"
+    mail to: @person.email, subject: "Queens Park Auction - Welcome Back!"
   end
 end
