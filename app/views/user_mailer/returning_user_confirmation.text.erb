@@ -1,6 +1,8 @@
 Hello <%= "#{@person.first_name} #{@person.last_name}" %> ,
 
-Thank you for registering for the Queens Park Auction.
+At last year’s Queen's Park Auction you registered and received a BIDDING NUMER! This code allowed you to easily and repeatedly bid on items without having to write too much, and was easier for us to read so no mistakes were made.
+
+Your bidder number is <%= @person.id %>.
 
 === Auction Rules ===
 
@@ -11,5 +13,3 @@ Thank you for registering for the Queens Park Auction.
 5. We do not deliver.
 6. We do not gift wrap.
 7. Please bear in mind when you come to pick up an item, reporters may be busy writing on deadline so please try to pick up earlier in the day if possible.
-
-Your bidder number is <%= @person.id %>.
