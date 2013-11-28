@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
-  default from: "noreply@qpauction.ca"
+  default from: "pressgalleryauction@gmail.com"
+
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,5 +10,10 @@ class UserMailer < ActionMailer::Base
   def signup_confirmation(person)
     @person = person
     mail to: @person.email, subject: "Confirmation - Queens Park Auction"
+  end
+
+  def returning_user_confirmation(person)
+    @person = person
+    mail to: @person.email, subjet: "Queens Park Auction - Welcome Back!"
   end
 end

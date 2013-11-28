@@ -12,6 +12,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  def resend_bidder_id
+    @person = Person.find(params[:id])
+    UserMailer.returning_user_confirmation(@person).deliver
+    respond_to do |format|
+      format.html { redirect_to people_path, notice: "Bidder ID has been sent to #{@person.email}"}
+      format.json {render :json => {success: true}}
+    end
+  end
+
+
   # GET /people/1
   # GET /people/1.json
   def show

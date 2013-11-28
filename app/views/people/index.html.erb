@@ -20,6 +20,7 @@
     <td><%= person.email %></td>
     <td><%= person.phone_number %></td>
     <td>
+      <%= link_to "Resend ID", "people/resend_bidder_id/#{person.id}", :class => "btn btn-mini btn-warn" %>
       <%= link_to 'Show', person, {:class => "btn btn-mini btn-info"} %>
       <%= link_to 'Edit', edit_person_path(person), {:class => 'btn btn-mini btn-success'} %>
       <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-mini btn-danger" %>

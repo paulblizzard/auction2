@@ -40,7 +40,7 @@ Auction2::Application.configure do
     user_name: "queensparkauction@gmail.com",
     password: "qp4ucti0n"
   }
-  
+
   # Specify what domain to use for mailer URLs
   config.action_mailer.default_url_options = {host: "qpauction.ca"}
 

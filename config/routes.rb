@@ -1,6 +1,7 @@
 Auction2::Application.routes.draw do
   get "welcome/index"
   get "items/receipt"
+  match "people/resend_bidder_id/:id" => "people#resend_bidder_id"
   resources :items
 
   resources :people
