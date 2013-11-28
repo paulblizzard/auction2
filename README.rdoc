@@ -1,4 +1,4 @@
-== Welcome to Rails
+== Welcome to the Charity Auction App
 
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
@@ -28,21 +28,10 @@ link:files/vendor/rails/actionpack/README.html.
 
 == Getting Started
 
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
-
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
-
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
-
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
-
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
-
+1. Install rvm:  curl -L https://get.rvm.io | bash -s stable
+2. Install ruby:  rvm install ruby-1.9.3
+3. Install bundler:  bundle install
+4. Run app:  rails s -e development
 
 == Debugging Rails
 
