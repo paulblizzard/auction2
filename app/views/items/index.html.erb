@@ -16,7 +16,7 @@
   <tr>
     <td><%= item.id %></td>
     <td><%= link_to item.name, item %></td>
-    <td><%= Person.find(item.donor_id.to_i).email %></td>
+    <td><%= Person.find(item.donor_id.to_i).email if item.donor_id %></td>
     <td><%= number_to_currency item.minimum_bid %></td>
     <td><%= Person.find(item.winning_bidder_id.to_i).email if item.winning_bidder_id %></td>
     <td><%= number_to_currency item.winning_bid %></td>
