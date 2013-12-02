@@ -12,7 +12,7 @@
 
 <p>
   <b>Donor:</b>
-  <%= Person.find(@item.donor_id.to_i).email %>
+  <%= @item.donor_id.present? ? Person.find(@item.donor_id.to_i).email : "No Donor Specified" %>
 </p>
 
 <p>
