@@ -1,0 +1,14 @@
+<%= @person.email %>
+<%= number_to_currency @items.collect { |item| item.winning_bid rescue 0 }.reduce(:+) %>
+<table>
+  <%- @items.each do |item| -%>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= number_to_currency item.winning_bid %></td>
+  </tr>
+  <%- end -%>
+  <tr class="total">
+    <td>Total:</td>
+    <td><%= number_to_currency @items.collect { |item| item.winning_bid rescue 0 }.reduce(:+) %></td>
+  </tr>
+</table>

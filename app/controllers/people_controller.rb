@@ -33,6 +33,12 @@ class PeopleController < ApplicationController
     end
   end
 
+  def receipt
+    @person = Person.find(params[:id])
+    @items = Item.where("winning_bidder_id = ?", params[:id])
+  end
+
+
   # GET /people/new
   # GET /people/new.json
   def new
