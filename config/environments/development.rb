@@ -25,7 +25,6 @@ Auction2::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "queensparkauction@gmail.com",
-    password: "qp4ucti0n"
   }
   
   # Specify what domain to use for mailer URLs
