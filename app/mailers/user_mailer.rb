@@ -12,6 +12,11 @@ class UserMailer < ActionMailer::Base
     mail to: @person.email, subject: "Confirmation - Queens Park Auction", reply_to: 'pressgalleryauction@gmail.com'
   end
 
+  def correction(person)
+    @person = person
+    mail to: @person.email, subject: "Correction - Queens Park Auction", reply_to: 'pressgalleryauction@gmail.com'
+  end
+
   def returning_user_confirmation(person)
     @person = person
     mail to: @person.email, subject: "Queens Park Auction - Welcome Back!", reply_to: 'pressgalleryauction@gmail.com'
